@@ -1,0 +1,15 @@
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\bin\Debug\net6.0\modulo-solver.exe
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\bin\Debug\net6.0\modulo-solver.deps.json
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\bin\Debug\net6.0\modulo-solver.runtimeconfig.json
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\bin\Debug\net6.0\modulo-solver.dll
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\bin\Debug\net6.0\modulo-solver.pdb
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.csproj.AssemblyReference.cache
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.AssemblyInfoInputs.cache
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.AssemblyInfo.cs
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.csproj.CoreCompileInputs.cache
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.dll
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\refint\modulo-solver.dll
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.pdb
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\modulo-solver.genruntimeconfig.cache
+C:\Users\matip\RiderProjects\modulo-solver\modulo-solver\obj\Debug\net6.0\ref\modulo-solver.dll
