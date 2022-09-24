@@ -1,17 +1,17 @@
-﻿using System.Collections;
+﻿using System.Runtime.CompilerServices;
 
 namespace modulo_solver.Expressions;
 
-public class Equation : Solvable
+public class Equation : ISolvable
 {
-    private Expression _expression;
+    private readonly Expression _expression;
 
     public Equation(Expression expression)
     {
         _expression = expression;
     }
 
-    private void Solve(ISet<Dictionary<Variable, int>> solutions, Dictionary<Variable, int> valuation,
+    private void Solve(ISet<Dictionary<Variable, int>> solutions, IDictionary<Variable, int> valuation,
         IReadOnlyList<Variable> variables, int variableId, int mod)
     {
         for (var value = 0; value < mod; value++)
@@ -32,18 +32,41 @@ public class Equation : Solvable
             }
         }
     }
-
-    public override HashSet<Dictionary<Variable, int>> Solve(int mod)
+    
+    internal HashSet<Dictionary<Variable, int>> Solve(List<Variable> variables, int mod)
     {
         var solutions = new HashSet<Dictionary<Variable, int>>();
         var valuation = new Dictionary<Variable, int>();
-        var variables = _expression.GetVariables().ToList();
 
         Solve(solutions, valuation, variables, 0, mod);
 
         return solutions;
     }
 
+    public HashSet<Dictionary<Variable, int>> Solve(int mod) => Solve(_expression.GetVariables().ToList(), mod);
+
+    public HashSet<Dictionary<Variable, int>> Solve(IEnumerable<Dictionary<Variable, int>> possibleValuations, 
+        int mod)
+    {
+        var solutions = new HashSet<Dictionary<Variable, int>>();
+        
+        foreach (var valuation in possibleValuations)
+        {
+            foreach (var (variable, value) in valuation)
+            {
+                variable.Value = value;
+            }
+            
+            if (_expression.Evaluate(mod) == 0)
+            {
+                solutions.Add(valuation);
+            }
+        }
+
+        return solutions;
+    }
+
+    public HashSet<Variable> Variables => _expression.GetVariables();
     public override string ToString()
     {
         return $"{_expression} = 0";
