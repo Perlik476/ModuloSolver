@@ -23,4 +23,10 @@ public class BinaryOperation : Expression
     {
         return $"({Arg1} {_symbol} {Arg2})";
     }
+    
+    public override void GetVariables(HashSet<Variable> variables)
+    {
+        Arg1.GetVariables(variables);
+        Arg2.GetVariables(variables);
+    }
 }

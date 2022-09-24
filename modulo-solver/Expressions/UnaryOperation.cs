@@ -24,4 +24,9 @@ public class UnaryOperation : Expression
     {
         return $"({_symbol} {Arg})";
     }
+    
+    public override void GetVariables(HashSet<Variable> variables)
+    {
+        Arg.GetVariables(variables);
+    }
 }
