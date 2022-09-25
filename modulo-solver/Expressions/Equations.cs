@@ -52,4 +52,22 @@ public class Equations : ISolvable, ICollection<Equation>
     {
         return _equations.Select(eq => eq.ToString()).Aggregate("", (acc, eq) => acc + $"{eq}; ");
     }
+
+    public static implicit operator Equations(Equation a) => new(new List<Equation>{a});
+    
+    public static Equations operator &(Equations a, Equations b)
+    {
+        var equations = new List<Equation>(a);
+        equations.AddRange(b);
+        return new Equations(equations);
+    }
+    
+    public static Equations operator &(Equations a, Equation b)
+    {
+        var equations = new List<Equation>(a);
+        equations.Add(b);
+        return new Equations(equations);
+    }
+
+    public static Equations operator &(Equation a, Equations b) => (b & a);
 }

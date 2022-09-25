@@ -64,3 +64,15 @@ foreach (var solution in eqs2.Solve(mod))
 //     }
 //     Console.WriteLine("");
 // }
+
+Equation e = 2 + 5 * x + (- y);
+Equation e2 = x * y + (-1);
+Console.WriteLine($"Solutions to {e & e2} in Z/{mod}Z:");
+foreach (var solution in (e & e2 & e).Solve(mod))
+{
+    foreach (var (variable, value) in solution)
+    {
+        Console.Write($"{variable} = {value}; ");
+    }
+    Console.WriteLine("");
+}

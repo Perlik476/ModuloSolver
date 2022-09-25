@@ -71,4 +71,10 @@ public class Equation : ISolvable
     {
         return $"{_expression} = 0";
     }
+
+    public static implicit operator Equation(Expression a) => new(a);
+    public static explicit operator Expression(Equation a) => a._expression;
+    
+    public static Equations operator &(Equation a, Equation b) => new(new List<Equation> { a, b });
+    
 }
